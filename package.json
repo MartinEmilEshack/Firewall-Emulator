@@ -1,0 +1,52 @@
+{
+	"name": "firewall",
+	"version": "0.1.0",
+	"private": true,
+	"author": "Martin Emil <mar10martinemil@gmail.com>",
+	"homepage": "./",
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"antd": "^4.9.1",
+		"electron": "^11.4.8",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"react-query": "^2.26.3",
+		"react-scripts": "3.4.1",
+		"webpack-cli": "^3.3.12"
+	},
+	"scripts": {
+		"start": "electron out/build/main.js",
+		"build": "webpack --progress=true --display-error-details --config config/build.config.js",
+		"build:watch": "webpack --progress --display-error-details --watch --info-verbosity verbose --config config/build.config.js",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"clean-webpack-plugin": "^3.0.0",
+		"copy-webpack-plugin": "^6.3.2",
+		"css-loader": "^3.6.0",
+		"file-loader": "^6.2.0",
+		"html-minifier-terser": "^5.1.1",
+		"html-webpack-plugin": "^4.5.0",
+		"svg-inline-loader": "^0.8.2",
+		"ts-loader": "^7.0.5",
+		"typescript": "^3.9.7"
+	}
+}

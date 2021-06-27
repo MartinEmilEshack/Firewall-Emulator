@@ -1,0 +1,62 @@
+{
+	// Place your Firewall workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"RendererEventHandler": {
+		"scope": "tsx,TSX,Tsx,ts,TS,typescriptreact,TypeScriptReact,typescript react,TypeScript React,typescript,TypeScript",
+		"prefix": "renderer event handler",
+		"description": "creates a new arrow functional Event Handler",
+		"body": [
+			"(event: IpcRendererEvent, ...data: any[]) => {",
+			"\t${0:console.log(data);}",
+			"}"
+		]
+	},
+	"MainEventHandler": {
+		"scope": "tsx,TSX,Tsx,ts,TS,typescriptreact,TypeScriptReact,typescript react,TypeScript React,typescript,TypeScript",
+		"prefix": "main event handler",
+		"description": "creates a new arrow functional MainEventHandler",
+		"body": [
+			"import { IpcMainEvent } from 'electron';",
+			"import { MainEventHandler } from 'src/models/EventHandler';",
+			"",
+			"export const $1: MainEventHandler = (",
+			"\tevent: IpcMainEvent,",
+			"\t...data: any[]",
+			") => {",
+			"\t$0",
+			"\t//event.returValue = data",
+			"};"
+		]
+	},
+	"Async MainEventHandler": {
+		"scope": "tsx,TSX,Tsx,ts,TS,typescriptreact,TypeScriptReact,typescript react,TypeScript React,typescript,TypeScript",
+		"prefix": "asyn main event handler",
+		"description": "creates a new arrow functional MainEventHandler",
+		"body": [
+			"import { IpcMainEvent } from 'electron';",
+			"import { MainEventHandler } from 'src/models/EventHandler';",
+			"",
+			"export const $1: MainEventHandler = async (",
+			"\tevent: IpcMainEvent,",
+			"\t...data: any[]",
+			") => {",
+			"\t$0",
+			"\t//event.reply('event-channel-reply', 'data')",
+			"};"
+		]
+	}
+}

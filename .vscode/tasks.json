@@ -1,0 +1,113 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"out/build/{,.[!.],..?}*"
+			],
+			"presentation": {
+				"reveal": "silent",
+				"panel": "dedicated",
+				"focus": false,
+				"showReuseMessage": false,
+				"revealProblems": "onProblem",
+				"echo": false,
+				"clear": true
+			},
+			"runOptions": {
+				"instanceLimit": 1
+			},
+			"promptOnClose": true,
+			"detail": "Deletes the \"build\" folder",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"start"
+			],
+			"presentation": {
+				"reveal": "silent",
+				"panel": "shared",
+				"focus": false,
+				"showReuseMessage": false,
+				"revealProblems": "onProblem",
+				"echo": false,
+				"clear": true
+			},
+			"runOptions": {
+				"instanceLimit": 1
+			},
+			"promptOnClose": true,
+			"detail": "Runs the project",
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Build-forever",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build:watch"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "silent",
+				"panel": "dedicated",
+				"focus": false,
+				"showReuseMessage": false,
+				"revealProblems": "onProblem",
+				"echo": false,
+				"clear": true
+			},
+			"runOptions": {
+				"instanceLimit": 1
+			},
+			"promptOnClose": true,
+			"detail": "Builds the project and keep listening for any updates to rebuild in the background",
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"presentation": {
+				"reveal": "silent",
+				"panel": "dedicated",
+				"focus": false,
+				"showReuseMessage": false,
+				"revealProblems": "onProblem",
+				"echo": false,
+				"clear": true
+			},
+			"runOptions": {
+				"instanceLimit": 1
+			},
+			"group": "build",
+			"promptOnClose": true,
+			"detail": "Builds the project",
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		}
+	]
+}

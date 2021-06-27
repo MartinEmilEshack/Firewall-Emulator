@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "action": "block",
+      "prefix": "127.0.0.1/32",
+      "port": "80",
+      "modifier": ""
+    },
+    {
+      "action": "allow",
+      "prefix": "192.30.252.0/22",
+      "port": "*",
+      "modifier": ""
+    },
+    {
+      "action": "allow",
+      "prefix": "*",
+      "port": "*",
+      "modifier": "established"
+    },
+    {
+      "action": "allow",
+      "prefix": "*",
+      "port": "25",
+      "modifier": ""
+    },
+    {
+      "action": "block",
+      "prefix": "255.0.0.0/2",
+      "port": "*",
+      "modifier": ""
+    }
+  ]
+}

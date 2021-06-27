@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+		"module": "es6",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"target": "es5",
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"suppressImplicitAnyIndexErrors": false,
+		"jsx": "react",
+		"allowJs": true,
+		"outDir": "out/build",
+		// "rootDir": "./src",
+		"baseUrl": "./",
+		// "typeRoots": [
+		// 	"./types",
+		// 	"./node_modules/@types",
+		// ]
+	},
+	// "include": [
+	// 	"src/**/*.css",
+	// 	"src/**/*",
+	// 	"src/*",
+	// 	"types/assets.d.ts",
+	// 	"types/json.d.ts",
+	// ],
+	"include": [
+		"./src",
+		"./types",
+		"./assets"
+, "old/v2/firewall", "old/v2/app"	],
+	"exclude": [
+		"node_modules/**/*",
+		"node_modules/*",
+	]
+}
